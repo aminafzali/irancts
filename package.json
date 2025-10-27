@@ -1,0 +1,21 @@
+{
+  "name": "irancts-website",
+  "version": "1.0.0",
+  "description": "IRAN CTS Website - خدمات جامع تجارت",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8080 -o",
+    "dev": "http-server -p 8080 -o -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": [
+    "irancts",
+    "commerce",
+    "trade",
+    "iran"
+  ],
+  "author": "IRAN CTS Team",
+  "license": "MIT"
+}

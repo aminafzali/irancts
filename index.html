@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRAN CTS - خدمات جامع تجارت</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://api.tgju.org/v1/widget/v2" defer></script>
+    <style>
+        @font-face {
+            font-family: 'Iran Yekan';
+            src: url('iranyekan/IRANYekanWebRegular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Iran Yekan';
+            src: url('iranyekan/IRANYekanWebBold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Iran Yekan';
+            src: url('iranyekan/IRANYekanWebMedium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Iran Yekan';
+            src: url('iranyekan/IRANYekanWebLight.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+        }
+        
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #ffffff;
+            --accent: #f4a261;
+            --text-primary: #1e3a8a;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Iran Yekan', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        
+        .icon-container {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .exchange-card {
+            background: white;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .exchange-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-title {
+            background: linear-gradient(135deg, white, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent), #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #2563eb);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .exchange-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .exchange-table th {
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            color: white;
+            padding: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .exchange-table td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .exchange-table tr:hover td {
+            background: #f8fafc;
+        }
+        
+        .currency-rate {
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .currency-change-positive {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .currency-change-negative {
+            color: var(--danger);
+            font-weight: 600;
+        }
+        
+        .currency-time {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .currency-flag {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        
+        .flag-usd { background: linear-gradient(to bottom, #b22234 33%, white 33%, white 66%, #b22234 66%); }
+        .flag-eur { background: linear-gradient(to bottom, #003399 33%, #ffcc00 33%, #ffcc00 66%, #003399 66%); }
+        .flag-gbp { background: linear-gradient(45deg, #012169 25%, white 25%, white 50%, #c8102e 50%, #c8102e 75%, white 75%); }
+        .flag-aed { background: linear-gradient(to bottom, #ff0000 33%, white 33%, white 66%, #000000 66%); }
+        .flag-cny { background: linear-gradient(to bottom, #de2910 50%, #de2910 50%); }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .max-w-7xl {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            
+            .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .exchange-table {
+                overflow-x: auto;
+            }
+            
+            .exchange-table table {
+                min-width: 600px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .text-4xl.md\\:text-5xl {
+                font-size: 2rem;
+            }
+            
+            .py-24 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+            
+            .py-32 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            
+            .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 1rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .exchange-table th,
+            .exchange-table td {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+            
+            .currency-rate {
+                font-size: 1rem;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .px-6 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .py-6 {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            
+            .space-x-12.space-x-reverse {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.875rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .text-xl.md\\:text-2xl {
+                font-size: 1rem;
+            }
+            
+            .service-card {
+                padding: 1rem;
+            }
+            
+            .w-16.h-16 {
+                width: 3rem;
+                height: 3rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            .exchange-table th,
+            .exchange-table td {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.75rem;
+            }
+            
+            .currency-rate {
+                font-size: 0.875rem;
+            }
+            
+            .currency-time {
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 1024px) {
+            .hidden.lg\\:block {
+                display: none;
+            }
+            
+            .lg\\:hidden {
+                display: block;
+            }
+            
+            #mobile-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-top: 1px solid var(--border);
+                box-shadow: var(--shadow-lg);
+                z-index: 40;
+            }
+            
+            #mobile-nav ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            #mobile-nav li {
+                margin-bottom: 0.5rem;
+            }
+            
+            #mobile-nav a {
+                display: block;
+                padding: 0.75rem;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+            }
+            
+            #mobile-nav a:hover {
+                background: var(--secondary);
+                color: var(--accent);
+            }
+        }
+        
+        /* Footer Responsive */
+        @media (max-width: 768px) {
+            .lg\\:col-span-1 {
+                grid-column: span 1;
+            }
+            
+            .grid.grid-cols-1.lg\\:grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 2rem;
+            }
+            
+            .space-y-6 > * + * {
+                margin-top: 1rem;
+            }
+            
+            .bg-white.bg-opacity-10 {
+                padding: 1rem;
+            }
+        }
+        
+        /* Exchange Table Mobile */
+        @media (max-width: 640px) {
+            .exchange-table {
+                font-size: 0.75rem;
+            }
+            
+            .exchange-table th {
+                padding: 0.5rem 0.25rem;
+            }
+            
+            .exchange-table td {
+                padding: 0.5rem 0.25rem;
+            }
+            
+            .currency-flag {
+                width: 16px;
+                height: 12px;
+                margin-left: 4px;
+            }
+        }
+        
+        /* Better Visual Design */
+        .service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .service-card:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-color: var(--accent);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .exchange-table {
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .exchange-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exchange-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .exchange-table tr:hover {
+            background-color: #e0f2fe;
+        }
+        
+        /* Improved Typography */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent), #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        /* Better Spacing */
+        .section-spacing {
+            padding: 4rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 2rem 0;
+            }
+        }
+        
+        /* Improved Button Design */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #2563eb);
+            color: white;
+            border: none;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+        }
+        
+        .slide {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slider-dot.active {
+            background: #ffffff !important;
+            width: 48px;
+        }
+        
+        .slider-dot {
+            cursor: pointer;
+        }
+        
+        .slider-dot:hover {
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* TGJU Widget Styling */
+        .tgju-widget-container {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .tgju-widget-container tgju {
+            display: block;
+            width: 100%;
+        }
+        
+        /* افزایش ارتفاع ردیف‌ها */
+        .tgju-widget-container .tgju-widget-content-row {
+            min-height: 72px !important;
+            padding: 20px 24px !important;
+            transition: background-color 0.2s ease;
+        }
+        
+        /* استایل هدر */
+        .tgju-widget-container .tgju-widget-header {
+            padding: 18px 24px !important;
+            font-weight: 600 !important;
+        }
+        
+        /* استایل عنوان */
+        .tgju-widget-container .tgju-widget-title {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+        }
+        
+        /* استایل قیمت */
+        .tgju-widget-container .tgju-widget-price {
+            font-size: 17px !important;
+            font-weight: 700 !important;
+        }
+        
+        /* استایل زمان */
+        .tgju-widget-container .tgju-widget-time {
+            font-size: 13px !important;
+        }
+        
+        /* استایل dot */
+        .tgju-widget-container .tgju-widget-dot {
+            width: 10px !important;
+            height: 10px !important;
+            border-radius: 50% !important;
+        }
+        
+        /* استایل جدول ویجت */
+        .tgju-widget-container .tgju-widget-table {
+            width: 100% !important;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+        }
+        
+        .tgju-widget-container .tgju-widget-table tbody tr {
+            transition: background-color 0.2s ease !important;
+        }
+        
+        .tgju-widget-container .tgju-widget-table tbody tr td {
+            padding: 20px 24px !important;
+            vertical-align: middle !important;
+        }
+        
+        .tgju-widget-container .tgju-widget-table thead tr th {
+            padding: 18px 24px !important;
+            font-size: 15px !important;
+            font-weight: 600 !important;
+        }
+        
+        /* استایل عنوان جدول */
+        .tgju-widget-container .tgju-widget-table-title,
+        .tgju-widget-container .tgju-widget-title-text {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            color: #1e3a8a !important;
+        }
+        
+        /* حذف سایه */
+        .tgju-widget-container {
+            box-shadow: none !important;
+        }
+        
+        /* ردیوس برای گوشه‌های پایین جدول */
+        .tgju-widget-container .tgju-widget-table {
+            border-radius: 16px;
+        }
+        
+        .tgju-widget-container .tgju-widget-table tbody tr:last-child td {
+            border-bottom: none !important;
+        }
+        
+        .tgju-widget-container .tgju-widget-table tbody tr:last-child td:first-child {
+            border-bottom-right-radius: 16px !important;
+        }
+        
+        .tgju-widget-container .tgju-widget-table tbody tr:last-child td:last-child {
+            border-bottom-left-radius: 16px !important;
+        }
+        
+        /* استایل بخش copyright - حذف بوردر بالا */
+        .tgju-widget-container .tgju-copyright,
+        .tgju-widget-container .tgju-copyright-fix {
+            border-top: none !important;
+            padding-top: 16px !important;
+            margin-top: 0 !important;
+            box-shadow: none !important;
+        }
+        
+        .tgju-widget-container .tgju-copyright a,
+        .tgju-widget-container .tgju-copyright-fix a {
+            color: #6b7280 !important;
+            text-decoration: none !important;
+            font-size: 13px !important;
+        }
+        
+        /* ریسپانسیو */
+        @media (max-width: 768px) {
+            .tgju-widget-container .tgju-widget-content-row {
+                min-height: 64px !important;
+                padding: 16px 20px !important;
+            }
+            
+            .tgju-widget-container .tgju-widget-header {
+                padding: 16px 20px !important;
+            }
+            
+            .tgju-widget-container .tgju-widget-title {
+                font-size: 14px !important;
+            }
+            
+            .tgju-widget-container .tgju-widget-price {
+                font-size: 15px !important;
+            }
+        }
+        
+        /* SVG Animation Components */
+        .svg-animation {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .svg-animation svg {
+            width: 160px;
+            height: 160px;
+        }
+
+        /* خطوط خاکستری که در حالت عادی دیده می‌شوند */
+        .gray-path, .gray-circle {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* خطوط رنگی که در حالت عادی مخفی هستند */
+        .draw-path, .colored-circle {
+            opacity: 0;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: opacity 0.3s ease;
+        }
+
+        /* وقتی هاور می‌شود */
+        .svg-item:hover .gray-path,
+        .svg-item:hover .gray-circle {
+            opacity: 0;
+        }
+
+        .svg-item:hover .draw-path {
+            opacity: 1;
+            animation: drawAnimation 2s ease-out forwards;
+        }
+
+        .svg-item:hover .colored-circle {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        @keyframes drawAnimation {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .svg-item {
+            opacity: 1;
+            color: #9ca3af;
+            transition: all 0.3s ease;
+            background: white !important;
+        }
+
+        .svg-item:hover {
+            background: #fffaf5 !important;
+            border-color: #f4a261 !important;
+        }
+
+        /* Container Card Styles */
+        .container-card {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #e2e8f0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .container-card:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-color: var(--accent);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-12px);
+        }
+
+        .container-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(244, 162, 97, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 1rem;
+        }
+
+        .container-card:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="shadow-sm sticky top-0 z-50" style="background-color: #ffffff;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+                        <img src="iranyekan/logo.png" alt="IRAN CTS Logo" class="w-10 h-10 object-contain">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-primary">IRAN CTS</h1>
+                        <p class="text-xs text-text-secondary">خدمات جامع تجارت</p>
+                    </div>
+                </div>
+
+                <!-- Contact Email -->
+                <div class="hidden lg:flex items-center space-x-2 space-x-reverse bg-gray-50 px-3 py-1 rounded-full">
+                    <i class="fas fa-envelope text-accent text-sm"></i>
+                    <a href="mailto:info@irancts.com" class="text-text-secondary hover:text-accent transition-colors text-sm font-medium">info@irancts.com</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-text-secondary hover:text-primary transition-colors p-2" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="hidden lg:block border-t border-gray-100 py-3">
+                <ul class="flex items-center justify-start space-x-8 space-x-reverse">
+                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">خانه</a></li>
+                    <li class="relative group">
+                        <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
+                            Hub
+                            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                        </a>
+                        <ul class="absolute top-full right-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">لیست درخواست ها</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">ثبت درخواست</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر تعرفه گمرکی</a></li>
+                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر شناسه کالا</a></li>
+                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">اتاق چت اختصاصی</a></li>
+                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">ماشین حساب گمرکی</a></li>
+                    <li class="relative group">
+                        <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
+                            خدمات رایگان دیگر
+                            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                        </a>
+                        <ul class="absolute top-full right-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">پرفورماساز انگلیسی</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">پکینگ لیست ساز</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">invoice ساز انگلیسی</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">فاکتور ساز فارسی</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Slider Section -->
+        <section class="relative overflow-hidden">
+            <div class="hero-slider relative h-[500px] w-full">
+                <!-- Slide 1 -->
+                <div class="slide active absolute inset-0 w-full h-full">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('g5.png');"></div>
+                    <div class="absolute inset-0 flex items-center justify-start px-8 sm:px-16">
+                        <div class="text-right max-w-xl p-8 rounded-2xl" style="background: rgba(0, 0, 0, 0.219); backdrop-filter: blur(2px);">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                                پلتفرم هوشمند تجارت بین‌المللی
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl text-white/95 mb-6 leading-relaxed">
+                                مدیریت کامل واردات و صادرات با ابزارهای پیشرفته و خدمات تخصصی
+                            </p>
+                            <div class="flex gap-3">
+                                <button class="text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg" style="background-color: #1e3a8a;">
+                                    شروع کنید
+                                </button>
+                                <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">
+                                    درباره ما
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide absolute inset-0 w-full h-full">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('g6.png');"></div>
+                    <div class="absolute inset-0 flex items-center justify-start px-8 sm:px-16">
+                        <div class="text-right max-w-xl p-8 rounded-2xl" style="background: rgba(0, 0, 0, 0.219); backdrop-filter: blur(2px);">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                                خدمات گمرکی حرفه‌ای
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl text-white/95 mb-6 leading-relaxed">
+                                ترخیص کالا، محاسبه تعرفه و مشاوره تخصصی با تیم متخصص ما
+                            </p>
+                            <div class="flex gap-3">
+                                <button class="text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg" style="background-color: #1e3a8a;">
+                                    مشاوره رایگان
+                                </button>
+                                <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">
+                                    خدمات ما
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Navigation Dots -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+                    <button class="slider-dot active w-12 h-2 rounded-full transition-all" style="background-color: #ffffff;" data-slide="0"></button>
+                    <button class="slider-dot w-12 h-2 rounded-full transition-all" style="background-color: rgba(255, 255, 255, 0.4);" data-slide="1"></button>
+                </div>
+                
+                <!-- Slider Arrow Controls -->
+                <div class="absolute bottom-8 right-8 flex gap-3 z-20">
+                    <button id="slider-prev" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
+                        <i class="fas fa-chevron-right text-white text-lg"></i>
+                    </button>
+                    <button id="slider-next" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
+                        <i class="fas fa-chevron-left text-white text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-24 section-spacing relative overflow-hidden" style="background-color: #ffffff;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">خدمات ما</h2>
+                    <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        مجموعه‌ای کامل از ابزارها و خدمات برای تسهیل تجارت بین‌المللی
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-search text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">موتور جستجوی تعرفه گمرکی</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                دسترسی سریع و دقیق به کد تعرفه همه کالاها با موتور جستجوی پیشرفته و توضیحات کامل
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>شروع جستجو</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-comments text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">اتاق چت اختصاصی</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                محیط امن و اختصاصی برای ارتباط با همکاران و متخصصان حوزه تجارت خارجی
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>ورود به چت</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-network-wired text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">Hub تجاری</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                شبکه ارتباطی جامع برای جستجو، ارتباط و پیدا کردن خدمات تجاری مورد نیاز
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>ورود به Hub</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-barcode text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">جستجوی شناسه کالا</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                دقیق‌ترین و سریع‌ترین جستجو با وارد کردن نام کالا یا بخشی از توضیحات
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>جستجوی کالا</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-file-invoice text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">پرفورماساز انگلیسی</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                ایجاد آسان و سریع پرفورما انگلیسی با قالب‌های استاندارد بین‌المللی
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>ایجاد پرفورما</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 - Container Style -->
+                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
+                        <div class="relative z-10">
+                            <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
+                                <i class="fas fa-calculator text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-primary mb-4">ماشین حساب گمرکی</h3>
+                            <p class="text-text-secondary leading-relaxed mb-6">
+                                محاسبه دقیق و سریع هزینه‌های گمرکی با فیلدهای هوشمند و رابط کاربری ساده
+                            </p>
+                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
+                                <span>محاسبه هزینه</span>
+                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Articles Section -->
+        <section class="py-16 relative overflow-hidden" style="background-color: #f9fafb;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">آخرین مقالات</h2>
+                    <p class="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4">
+                        مقالات تخصصی و کاربردی در حوزه تجارت بین‌المللی و خدمات گمرکی
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="سامانه ارز نیما" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                تجارت
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">سامانه ارز نیما چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                در دنیای سرمایه‌گذاری و بازارهای مالی، اصطلاحاتی وجود دارد که درک صحیح و شناخت کافی از آن می‌تواند برای کسانی که قصد ورود به این نوع بازارها را دارند، موثر و کاربردی باشد...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="شناسه کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                گمرک
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">شناسه کالا چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                به دلیل افزایش سرقت و قاچاق کالا در حال حاضر هرگونه فعالیت تجاری در زمینه صادرات و واردات کالا صرفاً در صورت داشتن شناسه کالا قابل اجرا است...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="کارنه تیر" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                ترانزیت
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">کارنه تیر</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                کارنه تیر سندی گمرکی است که برای ترانزیت بین‌المللی کالا در کشور مبدا صادر می‌شود و باعث می‌شود کالا به صورت پلمپ شده از خاک کشورهای بین راه عبور کند...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="اینکوترمز" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                اصطلاحات
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">اینکوترمز چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                اینکوترمز یا اصطلاحات تجاری بین‌المللی شامل مجموعه‌ای از پیش تعریف شده‌ای از اصطلاحات تجاری است که توسط اتاق بازرگانی بین‌المللی منتشر می‌شود...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="دموراژ" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                کشتیرانی
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">دموراژ چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                از گذشته تا کنون، صنعت کشتیرانی یکی از حیاتی‌ترین مسیرهای ارتباطی برای تجار و بازرگانان محسوب می‌شود و نقش مهم و تأثیرات بسزایی در اقتصاد جهانی دارد...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="واردات کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                واردات
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">واردات کالا چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                واردات کالا به عنوان یک فعالیت بازرگانی شناخته می‌شود که شامل ثبت سفارش، خرید کالا از کشور خارجی و حمل آن تا مرز کشور و در نهایت وارد کردن به داخل خاک کشور است...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exchange Rates Section -->
+        <section class="py-16 sm:py-20 relative overflow-hidden" style="background-color: #ffffff;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-12 sm:mb-16">
+                    <div class="inline-block px-6 py-2 rounded-full mb-4" style="background-color: #1e3a8a;">
+                        <span class="text-white font-semibold text-sm sm:text-base">به‌روزرسانی لحظه‌ای</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6" style="color: #1e3a8a;">نرخ ارزهای جهانی</h2>
+                    <p class="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed px-4" style="color: #6b7280;">
+                        اطلاعات دقیق و به‌روز نرخ ارز برای تصمیم‌گیری هوشمندانه در معاملات بین‌المللی
+                    </p>
+                </div>
+
+                <div class="tgju-widget-container">
+                    <tgju
+                        type="market-data"
+                        items="137203,137205,137206,137222,137292,137308,523798,523797"
+                        columns="dot,time"
+                        token="webservice"
+                        styles='{
+                            "hbackground": "#1e3a8a",
+                            "hcolor": "#ffffff",
+                            "hover": "#fed7aa",
+                            "border": "#ffffff",
+                            "borderlist": "#e5e7eb",
+                            "title": "#1e3a8a",
+                            "dot": "#1e3a8a",
+                            "price": "#1e3a8a",
+                            "radius": "16px",
+                            "background": "#ffffff",
+                            "color": "#374151",
+                            "high": "#10b981",
+                            "low": "#ef4444",
+                            "copyright": "#6b7280",
+                            "time": "#9ca3af",
+                            "rowheight": "72px"
+                        }'></tgju>
+                </div>
+            </div>
+        </section>
+
+        <!-- SVG Animation Components Section -->
+        <section class="py-24 relative overflow-hidden" style="background-color: #ffffff;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-6xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">خدمات تجاری و بازرگانی</h2>
+                    <p class="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        راهکارهای جامع و حرفه‌ای برای توسعه کسب‌وکار بین‌المللی شما با بهره‌گیری از تجربه و تخصص تیم ما
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- SVG Animation 1 - Trade Network -->
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
+                        <div class="svg-animation mb-4">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- خطوط خاکستری که محو می‌شوند -->
+                                <path class="gray-path" d="M30,100 L170,100 M100,30 L100,170 M50,50 L150,150 M150,50 L50,150" 
+                                      stroke="#9ca3af" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round"/>
+                                <circle class="gray-circle" cx="100" cy="100" r="18" fill="#9ca3af"/>
+                                
+                                <!-- خطوط سورمه‌ای که با انیمیشن ظاهر می‌شوند -->
+                                <path class="draw-path" d="M30,100 L170,100 M100,30 L100,170 M50,50 L150,150 M150,50 L50,150" 
+                                      stroke="#1e3a8a" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round"/>
+                                <circle class="colored-circle" cx="100" cy="100" r="18" fill="#f4a261"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">شبکه تجاری</h3>
+                        <p class="text-base text-text-secondary leading-relaxed">
+                            اتصال هوشمند و سریع بازرگانان و شرکت‌های تجاری در سراسر دنیا
+                        </p>
+                    </div>
+
+                    <!-- SVG Animation 2 - Shipping Container -->
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
+                        <div class="svg-animation mb-4">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- خطوط خاکستری که محو می‌شوند -->
+                                <path class="gray-path" d="M40,60 L40,140 L160,140 L160,60 L40,60 M80,60 L80,140 M120,60 L120,140" 
+                                      stroke="#9ca3af" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round"/>
+                                <circle class="gray-circle" cx="70" cy="100" r="10" fill="#9ca3af"/>
+                                <circle class="gray-circle" cx="130" cy="100" r="10" fill="#9ca3af"/>
+                                
+                                <!-- خطوط سورمه‌ای که با انیمیشن ظاهر می‌شوند -->
+                                <path class="draw-path" d="M40,60 L40,140 L160,140 L160,60 L40,60 M80,60 L80,140 M120,60 L120,140" 
+                                      stroke="#1e3a8a" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round"/>
+                                <circle class="colored-circle" cx="70" cy="100" r="10" fill="#f4a261"/>
+                                <circle class="colored-circle" cx="130" cy="100" r="10" fill="#f4a261"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">حمل و نقل بین‌المللی</h3>
+                        <p class="text-base text-text-secondary leading-relaxed">
+                            مدیریت کامل و هوشمند فرآیند حمل کالا با کانتینرهای استاندارد
+                        </p>
+                    </div>
+
+                    <!-- SVG Animation 3 - Currency Exchange -->
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
+                        <div class="svg-animation mb-4">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- خطوط خاکستری که محو می‌شوند -->
+                                <path class="gray-path" d="M60,80 L140,80 M140,80 L130,70 M140,80 L130,90 M140,120 L60,120 M60,120 L70,110 M60,120 L70,130" 
+                                      stroke="#9ca3af" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round"/>
+                                <circle class="gray-circle" cx="100" cy="100" r="20" fill="#9ca3af"/>
+                                
+                                <!-- خطوط سورمه‌ای که با انیمیشن ظاهر می‌شوند -->
+                                <path class="draw-path" d="M60,80 L140,80 M140,80 L130,70 M140,80 L130,90 M140,120 L60,120 M60,120 L70,110 M60,120 L70,130" 
+                                      stroke="#1e3a8a" 
+                                      stroke-width="12" 
+                                      fill="none" 
+                                      stroke-linecap="round" 
+                                      stroke-linejoin="round"/>
+                                <circle class="colored-circle" cx="100" cy="100" r="20" fill="#f4a261"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">تبادل ارز لحظه‌ای</h3>
+                        <p class="text-base text-text-secondary leading-relaxed">
+                            دسترسی به نرخ‌های به‌روز ارزهای مختلف برای تصمیم‌گیری بهتر
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 relative overflow-hidden" style="background-color: #f9fafb;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">سوالات متداول</h2>
+                    <p class="text-lg text-text-secondary">
+                        پاسخ سوالات رایج شما در مورد خدمات تجاری و بازرگانی
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-lg font-semibold text-primary">چگونه می‌توانم از خدمات گمرکی شما استفاده کنم؟</span>
+                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
+                            برای استفاده از خدمات گمرکی ما، ابتدا در سایت ثبت‌نام کنید، سپس از طریق پنل کاربری خود می‌توانید درخواست خدمات مورد نظر خود را ثبت کنید.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-lg font-semibold text-primary">آیا خدمات شما شامل مشاوره رایگان می‌شود؟</span>
+                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
+                            بله، ما مشاوره رایگان اولیه برای تمام مشتریان ارائه می‌دهیم تا بتوانند بهترین راهکار را برای کسب‌وکار خود انتخاب کنند.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-lg font-semibold text-primary">چقدر طول می‌کشد تا درخواست من پردازش شود؟</span>
+                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
+                            زمان پردازش درخواست‌ها بسته به نوع خدمت متفاوت است، اما معمولاً بین 24 تا 48 ساعت کاری طول می‌کشد.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-lg font-semibold text-primary">آیا پشتیبانی 24 ساعته دارید؟</span>
+                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
+                            بله، تیم پشتیبانی ما در تمام ساعات شبانه‌روز آماده پاسخگویی به سوالات و حل مشکلات شما است.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-16 relative overflow-hidden" style="background-color: #ffffff;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">تماس با ما</h2>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+                        ما آماده پاسخگویی به سوالات شما هستیم. با ما در ارتباط باشید تا بتوانیم بهترین راهکارهای تجاری را برای شما ارائه دهیم.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-primary mb-2">نام و نام خانوادگی</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                       placeholder="نام کامل خود را وارد کنید">
+                            </div>
+                            
+                            <!-- Phone Field -->
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-primary mb-2">شماره تماس</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                       placeholder="شماره موبایل یا تلفن ثابت">
+                            </div>
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-primary mb-2">ایمیل</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                   placeholder="آدرس ایمیل خود را وارد کنید">
+                        </div>
+                        
+                        <!-- Message Field -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-primary mb-2">پیام شما</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                                      placeholder="سوالات، درخواست‌ها یا نظرات خود را اینجا بنویسید..."></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="text-right">
+                            <button type="submit" 
+                                    class="inline-flex items-center px-8 py-3 text-white font-semibold rounded-lg transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2" style="background-color: #1e3a8a;">
+                                ارسال پیام
+                                <span class="mr-3 font-bold" style="font-size: 24px;">←</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white" style="background-color: #1e3a8a;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-12 pb-6 sm:pb-6">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-6">
+                <!-- Company Info -->
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <img src="iranyekan/logo2.png" alt="IRAN CTS Logo" class="w-12 h-12 sm:w-16 sm:h-16 object-contain">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">IRAN CTS</h3>
+                            <p class="text-blue-200 font-medium text-sm sm:text-base">خدمات جامع تجارت</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 leading-relaxed text-sm sm:text-base">
+                        پلتفرم پیشرفته و هوشمند برای تسهیل فرآیندهای تجاری بین‌المللی و ارائه خدمات جامع بازرگانی
+                    </p>
+                    <div class="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
+                        <i class="fas fa-envelope text-accent text-sm sm:text-base"></i>
+                        <a href="mailto:info@irancts.com" class="text-blue-100 hover:text-white transition-colors font-medium text-sm sm:text-base">info@irancts.com</a>
+                    </div>
+                </div>
+
+                <!-- Trust Statement -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-xl sm:text-2xl font-bold text-white">چرا IRAN CTS؟</h4>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-accent text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">امنیت بالا</h5>
+                                <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
+                                    حفاظت کامل از اطلاعات با استانداردهای بین‌المللی
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-accent text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">پشتیبانی 24/7</h5>
+                                <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
+                                    تیم پشتیبانی در تمام ساعات شبانه‌روز
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-award text-accent text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">کیفیت تضمین شده</h5>
+                                <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">
+                                    خدمات با کیفیت بالا و استانداردهای جهانی
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-xl sm:text-2xl font-bold text-white">دسترسی سریع</h4>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            درباره ما
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            خدمات
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            تماس با ما
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            Hub تجاری
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            بلاگ
+                        </a>
+                        <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
+                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            سوالات متداول
+                        </a>
+                    </div>
+                    <div class="pt-4 border-t border-white/10">
+                        <p class="text-blue-100 text-xs sm:text-sm mb-3">ما را در شبکه‌های اجتماعی دنبال کنید:</p>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
+                                <i class="fab fa-telegram text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center">
+                <p class="text-blue-200 text-xs sm:text-sm">
+                    © ۲۰۲۴-۲۰۲۵ IRAN CTS. تمامی حقوق محفوظ است.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots.forEach(dot => dot.classList.add('bg-white/50'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            dots[index].classList.remove('bg-white/50');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 8000);
+        }
+        
+        function stopSlider() {
+            clearInterval(slideInterval);
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                currentSlide = index;
+                showSlide(currentSlide);
+                stopSlider();
+                startSlider();
+            });
+        });
+        
+        // Arrow navigation
+        const prevBtn = document.getElementById('slider-prev');
+        const nextBtn = document.getElementById('slider-next');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+                stopSlider();
+                startSlider();
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                stopSlider();
+                startSlider();
+            });
+        }
+        
+        // Initialize slider
+        showSlide(0);
+        startSlider();
+        
+        // SVG Animation on Scroll
+        const svgItems = document.querySelectorAll('.svg-item');
+        const svgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                        entry.target.style.color = 'inherit';
+                    }, 200);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        svgItems.forEach(item => {
+            svgObserver.observe(item);
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileNav.classList.toggle('hidden');
+                
+                // Change icon
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileNav.classList.contains('hidden')) {
+                    icon.className = 'fas fa-bars text-xl';
+                } else {
+                    icon.className = 'fas fa-times text-xl';
+                }
+            });
+        }
+        
+        // TGJU Widget is handled by external script - no custom update needed
+        
+        // Smooth scrolling for anchor links
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Service cards hover effect
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(function(card) {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Lazy loading for images
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(function(img) {
+            imageObserver.observe(img);
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.className = 'fixed bottom-8 left-8 text-white p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50';
+        backToTopBtn.style.backgroundColor = '#1e3a8a';
+        backToTopBtn.id = 'back-to-top';
+        backToTopBtn.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#1e40af';
+        });
+        backToTopBtn.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '#1e3a8a';
+        });
+        document.body.appendChild(backToTopBtn);
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Loading animation
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'fixed inset-0 bg-white z-50 flex items-center justify-center';
+        loadingOverlay.innerHTML = '<div class="animate-spin rounded-full h-16 w-16 border-4 border-accent border-t-transparent"></div>';
+        
+        // Show loading on page load
+        document.body.appendChild(loadingOverlay);
+        
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(function() {
+                    loadingOverlay.remove();
+                }, 300);
+            }, 1000);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // ESC key closes mobile menu
+            if (e.key === 'Escape' && mobileNav && !mobileNav.classList.contains('hidden')) {
+                mobileNav.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.className = 'fas fa-bars text-xl';
+            }
+        });
+        
+        // Performance optimization
+        const debounce = function(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = function() {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        };
+        
+        // Debounced scroll handler
+        const handleScroll = debounce(function() {
+            // Add any scroll-based functionality here
+        }, 100);
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqButtons = document.querySelectorAll('.faq-item button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const content = faqItem.querySelector('.faq-content');
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle content visibility
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.display = 'block';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.querySelector('form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const name = formData.get('name');
+                    const phone = formData.get('phone');
+                    const email = formData.get('email');
+                    const message = formData.get('message');
+                    
+                    // Simple validation
+                    if (!name || !phone || !email || !message) {
+                        alert('لطفاً تمام فیلدها را پر کنید.');
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('لطفاً یک ایمیل معتبر وارد کنید.');
+                        return;
+                    }
+                    
+                    // Phone validation (basic)
+                    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                    if (!phoneRegex.test(phone)) {
+                        alert('لطفاً یک شماره تماس معتبر وارد کنید.');
+                        return;
+                    }
+                    
+                    // Show success message
+                    alert('پیام شما با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.');
+                    
+                    // Reset form
+                    this.reset();
+                });
+            }
+        });
+        
+        // Console welcome message
+        console.log('%c🚀 IRAN CTS - Premium Design Loaded!', 'color: #6366f1; font-size: 16px; font-weight: bold;');
+        console.log('%cخدمات جامع تجارت - طراحی شده با ❤️', 'color: #6b7280; font-size: 12px;');
+    </script>
+</body>
+</html>
