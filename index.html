@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRAN CTS - خدمات جامع تجارت</title>
     <link rel="stylesheet" href="assets/css/tailwind.css">
-    <script src="https://api.tgju.org/v1/widget/v2" defer></script>
     <style>
         @font-face {
             font-family: 'Iran Yekan';
@@ -429,6 +428,13 @@
                 background: var(--secondary);
                 color: var(--accent);
             }
+        }
+        
+        /* Performance Optimization for Background Patterns */
+        .absolute.inset-0.opacity-3 {
+            content-visibility: auto;
+            contain: layout style paint;
+            will-change: transform;
         }
         
         /* Footer Responsive */
@@ -1062,7 +1068,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">موتور جستجوی تعرفه گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1080,7 +1086,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/message-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/message-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">اتاق چت اختصاصی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1098,7 +1104,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">Hub تجاری</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1116,7 +1122,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/barcode-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/barcode-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">جستجوی شناسه کالا</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1134,7 +1140,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/file-invoice-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/file-invoice-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">پرفورماساز انگلیسی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1152,7 +1158,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/calculator-solid-full.svg" alt="" class="w-[28px] h-[28px] invert p-4">
+                                <img src="assets/icons/solid/calculator-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">ماشین حساب گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1859,6 +1865,43 @@
 
     <!-- JavaScript -->
     <script>
+        // ========================================
+        // PERFORMANCE OPTIMIZATION: Lazy Loading
+        // ========================================
+        
+        // 1. Lazy Load TGJU Widget (فقط وقتی کاربر به بخش نرخ ارز می‌رسد)
+        let tgjuLoaded = false;
+        
+        function loadTGJUWidget() {
+            if (tgjuLoaded) return;
+            tgjuLoaded = true;
+            
+            const script = document.createElement('script');
+            script.src = 'https://api.tgju.org/v1/widget/v2';
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+
+        // Intersection Observer برای ویجت
+        const widgetObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadTGJUWidget();
+                    widgetObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '100px' // 100px قبل از دیده شدن، لود کن
+        });
+
+        // فقط ویجت را observe می‌کنیم
+        document.addEventListener('DOMContentLoaded', () => {
+            const widgetContainer = document.querySelector('.tgju-widget-container');
+            if (widgetContainer) {
+                widgetObserver.observe(widgetContainer.closest('section'));
+            }
+        });
+
         // Hero Slider
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-dot');
