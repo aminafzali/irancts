@@ -130,22 +130,12 @@
             width: 100%;
         }
 
-        /* Fine-tune line-height for services section title (mobile-first) */
-        .services-title {
-            line-height: 1.4;
-        }
-        @media (min-width: 768px) {
-            .services-title {
-                line-height: 1.35;
-            }
-        }
-
         /* Mobile submenu background */
         #mobile-nav .submenu {
             background-color: rgba(30, 58, 138, 0.04);
             border-radius: 0.5rem;
             margin-top: 0;
-            margin-bottom: 0;
+            margin-bottom: 1.5rem;
             padding: 0 0.75rem;
             overflow: hidden;
             max-height: 0;
@@ -155,22 +145,18 @@
         }
 
         #mobile-nav .submenu.open {
-            max-height: 700px;
+            max-height: 500px;
             opacity: 1;
             transform: translateY(0);
-            margin-top: 0.75rem;
+            margin-top: 0.25rem;
             margin-bottom: 0.25rem;
             padding: 0.5rem 0.75rem 0.75rem 0.75rem;
         }
         
         /* آخرین submenu وقتی باز است، padding-bottom بیشتری داشته باشد */
         #mobile-nav .has-submenu:last-child .submenu.open {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* فاصله ساب‌منوی باز نسبت به آیتم بعدی (حداقل) */
-        #mobile-nav .has-submenu:not(:last-child) .submenu.open {
-            margin-bottom: 0.5rem;
+            padding-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .hero-title {
@@ -317,18 +303,9 @@
         }
         
         #mobile-nav.menu-open {
-            max-height: calc(100vh - 64px);
+            max-height: 600px;
             opacity: 1;
-            padding-bottom: 1rem;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            overscroll-behavior: contain;
-        }
-
-        /* Lock page scroll when mobile menu is open */
-        body.mobile-nav-open {
-            overflow: hidden;
-            touch-action: none;
+            padding-bottom: 0.75rem;
         }
         
         /* Submenu Animations */
@@ -342,32 +319,9 @@
         }
         
         .submenu.open {
-            max-height: 550px;
+            max-height: 300px;
             opacity: 1;
             margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Create real spacing for open submenus by adding margin on the parent item */
-        #mobile-nav .has-submenu.submenu-open {
-            margin-bottom: 0.5rem;
-        }
-        /* Modern browsers: ensure spacing even without JS class */
-        #mobile-nav .has-submenu:has(> .submenu.open) {
-            margin-bottom: 0.5rem;
-        }
-        /* Remove underline decoration for mobile nav links */
-        #mobile-nav .nav-link::after {
-            display: none;
-        }
-        
-        /* Unify size (height/typography/padding) of mobile menu items */
-        #mobile-nav .has-submenu > button,
-        #mobile-nav a.nav-link {
-            font-size: 1rem;           /* text-base */
-            line-height: 1.5rem;       /* 24px for consistent height */
-            padding-top: 0.625rem;     /* py-2.5 */
-            padding-bottom: 0.625rem;
         }
         
         /* Chevron rotation animation */
@@ -1386,7 +1340,7 @@
             </div>
             <div class="max-w-6xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 leading-snug">خدمات ویژه تجاری و بازرگانی</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">خدمات ویژه تجاری و بازرگانی</h2>
                     <p class="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
                         راهکارهای جامع و حرفه‌ای برای توسعه کسب‌وکار بین‌المللی شما با بهره‌گیری از تجربه و تخصص تیم ما
                     </p>
@@ -2133,54 +2087,6 @@
             });
         }
         
-        // Touch swipe support for mobile
-        const sliderContainer = document.querySelector('.hero-slider');
-        if (sliderContainer) {
-            let touchStartX = 0;
-            let touchStartY = 0;
-            let touchDeltaX = 0;
-            let isHorizontalSwipe = false;
-            const SWIPE_THRESHOLD = 40; // px
-
-            sliderContainer.addEventListener('touchstart', (e) => {
-                if (!e.touches || e.touches.length === 0) return;
-                touchStartX = e.touches[0].clientX;
-                touchStartY = e.touches[0].clientY;
-                touchDeltaX = 0;
-                isHorizontalSwipe = false;
-                stopSlider();
-            }, { passive: true });
-
-            sliderContainer.addEventListener('touchmove', (e) => {
-                if (!e.touches || e.touches.length === 0) return;
-                const dx = e.touches[0].clientX - touchStartX;
-                const dy = e.touches[0].clientY - touchStartY;
-                // تشخیص سوایپ افقی در مقابل اسکرول عمودی
-                if (!isHorizontalSwipe && Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
-                    isHorizontalSwipe = true;
-                }
-                if (isHorizontalSwipe) {
-                    // جلوگیری از اسکرول صفحه هنگام سوایپ افقی
-                    e.preventDefault();
-                    touchDeltaX = dx;
-                }
-            }, { passive: false });
-
-            sliderContainer.addEventListener('touchend', () => {
-                if (isHorizontalSwipe) {
-                    if (touchDeltaX <= -SWIPE_THRESHOLD) {
-                        // swipe left => next slide
-                        nextSlide();
-                    } else if (touchDeltaX >= SWIPE_THRESHOLD) {
-                        // swipe right => previous slide
-                        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                        showSlide(currentSlide);
-                    }
-                }
-                startSlider();
-            });
-        }
-
         // Initialize slider
         showSlide(0);
         startSlider();
@@ -2215,20 +2121,16 @@
                 if (isOpen) {
                     // Close menu
                     mobileNav.classList.remove('menu-open');
-                    document.body.classList.remove('mobile-nav-open');
                     setTimeout(() => {
                         // Close all submenus when main menu closes
                         const allSubmenus = mobileNav.querySelectorAll('.submenu');
                         allSubmenus.forEach(sub => sub.classList.remove('open'));
                         const allChevrons = mobileNav.querySelectorAll('.submenu-chevron');
                         allChevrons.forEach(ch => ch.classList.remove('rotate'));
-                        const allParents = mobileNav.querySelectorAll('.has-submenu');
-                        allParents.forEach(p => p.classList.remove('submenu-open'));
                     }, 300);
                 } else {
                     // Open menu
                     mobileNav.classList.add('menu-open');
-                    document.body.classList.add('mobile-nav-open');
                 }
                 
                 // Change icon
@@ -2261,7 +2163,6 @@
                                 const ch = p.querySelector('.submenu-chevron');
                                 if (submenuEl) submenuEl.classList.remove('open');
                                 if (ch) ch.classList.remove('rotate');
-                                p.classList.remove('submenu-open');
                             }
                         });
                         
@@ -2269,11 +2170,9 @@
                         if (isOpen) {
                             sub.classList.remove('open');
                             if (chevron) chevron.classList.remove('rotate');
-                            parent.classList.remove('submenu-open');
                         } else {
                             sub.classList.add('open');
                             if (chevron) chevron.classList.add('rotate');
-                            parent.classList.add('submenu-open');
                             
                             // اگر آخرین submenu است، smooth scroll به آن
                             setTimeout(() => {
