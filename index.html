@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRAN CTS - خدمات جامع تجارت</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <script src="https://api.tgju.org/v1/widget/v2" defer></script>
     <style>
         @font-face {
@@ -862,24 +860,24 @@
 
                 <!-- Contact Email -->
                 <div class="hidden lg:flex items-center space-x-2 space-x-reverse bg-gray-50 px-3 py-1 rounded-full">
-                    <i class="fas fa-envelope text-accent text-sm"></i>
+                    <img src="assets/icons/solid/envelope-solid-full.svg" alt="" class="w-3.5 h-3.5" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                     <a href="mailto:info@irancts.com" class="text-text-secondary hover:text-accent transition-colors text-sm font-medium">info@irancts.com</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <button class="lg:hidden text-text-secondary hover:text-primary transition-colors p-2" id="mobile-menu-btn">
-                    <i class="fas fa-bars text-lg"></i>
+                    <img src="assets/icons/solid/bars-solid-full.svg" alt="Menu" class="w-5 h-5">
                 </button>
             </div>
 
             <!-- Navigation Menu -->
             <nav class="hidden lg:block border-t border-gray-100 py-3">
-                <ul class="flex items-center justify-start space-x-2 space-x-reverse">
+                <ul class="flex items-center justify-start space-x-6 space-x-reverse">
                     <li><a href="#" class="nav-link text-text-primary font-medium text-base">خانه</a></li>
                     <li class="relative group">
                         <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
                             Hub
-                            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-3 h-3 mr-1">
                         </a>
                         <ul class="absolute top-full right-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                             <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">لیست درخواست ها</a></li>
@@ -893,7 +891,7 @@
                     <li class="relative group">
                         <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
                             خدمات رایگان دیگر
-                            <i class="fas fa-chevron-down mr-1 text-xs"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-3 h-3 mr-1">
                         </a>
                         <ul class="absolute top-full right-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                             <li><a href="#" class="block px-4 py-2 text-text-secondary hover:bg-gray-50 hover:text-accent transition-colors text-sm">پرفورماساز انگلیسی</a></li>
@@ -914,7 +912,7 @@
                     <li class="has-submenu">
                         <button type="button" class="w-full flex items-center justify-between px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">
                             <span>Hub</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-3 h-3 transition-transform">
                         </button>
                         <ul class="submenu hidden pr-4 space-y-2 text-sm text-text-secondary">
                             <li><a href="#" class="block py-2 hover:text-accent transition-colors">لیست درخواست ها</a></li>
@@ -936,7 +934,7 @@
                     <li class="has-submenu">
                         <button type="button" class="w-full flex items-center justify-between px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">
                             <span>خدمات رایگان دیگر</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-3 h-3 transition-transform">
                         </button>
                         <ul class="submenu hidden pr-4 space-y-2 text-sm text-text-secondary">
                             <li><a href="#" class="block py-2 hover:text-accent transition-colors">پرفورماساز انگلیسی</a></li>
@@ -1004,20 +1002,20 @@
                 <!-- Slider Arrow Controls - Desktop -->
                 <div class="absolute bottom-8 right-8 hidden md:flex gap-3 z-20">
                     <button id="slider-prev" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
-                        <i class="fas fa-chevron-right text-white text-lg"></i>
+                        <img src="assets/icons/solid/chevron-right-solid-full.svg" alt="Previous" class="w-5 h-5 invert">
                     </button>
                     <button id="slider-next" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
-                        <i class="fas fa-chevron-left text-white text-lg"></i>
+                        <img src="assets/icons/solid/chevron-left-solid-full.svg" alt="Next" class="w-5 h-5 invert">
                     </button>
                 </div>
 
                 <!-- Slider Arrow Controls - Mobile (sides) -->
                 <div class="absolute inset-0 flex items-center justify-between px-3 md:hidden z-20">
                     <button id="slider-prev-m" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);">
-                        <i class="fas fa-chevron-right text-white"></i>
+                        <img src="assets/icons/solid/chevron-right-solid-full.svg" alt="Previous" class="w-4 h-4 invert">
                     </button>
                     <button id="slider-next-m" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);">
-                        <i class="fas fa-chevron-left text-white"></i>
+                        <img src="assets/icons/solid/chevron-left-solid-full.svg" alt="Next" class="w-4 h-4 invert">
                     </button>
                 </div>
             </div>
@@ -1064,7 +1062,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-search text-white text-3xl"></i>
+                                <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">موتور جستجوی تعرفه گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1072,7 +1070,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>شروع جستجو</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1082,7 +1080,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-comments text-white text-3xl"></i>
+                                <img src="assets/icons/solid/message-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">اتاق چت اختصاصی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1090,7 +1088,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>ورود به چت</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1100,7 +1098,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-network-wired text-white text-3xl"></i>
+                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">Hub تجاری</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1108,7 +1106,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>ورود به Hub</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1118,7 +1116,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-barcode text-white text-3xl"></i>
+                                <img src="assets/icons/solid/barcode-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">جستجوی شناسه کالا</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1126,7 +1124,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>جستجوی کالا</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1136,7 +1134,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-file-invoice text-white text-3xl"></i>
+                                <img src="assets/icons/solid/file-invoice-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">پرفورماساز انگلیسی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1144,7 +1142,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>ایجاد پرفورما</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1154,7 +1152,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <i class="fas fa-calculator text-white text-3xl"></i>
+                                <img src="assets/icons/solid/calculator-solid-full.svg" alt="" class="w-8 h-8 invert">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">ماشین حساب گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1162,7 +1160,7 @@
                             </p>
                             <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
                                 <span>محاسبه هزینه</span>
-                                <i class="fas fa-arrow-left mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform">
                             </div>
                         </div>
                     </div>
@@ -1376,7 +1374,7 @@
                                 </p>
                                 <a href="#contact" class="inline-flex items-center font-semibold px-6 py-3 rounded-lg transition-colors" style="background-color:#f4a261; color:#ffffff;">
                                     همین الان تماس بگیرید
-                                    <i class="fas fa-arrow-left mr-2"></i>
+                                    <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2 invert">
                                 </a>
                             </div>
 
@@ -1437,7 +1435,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1458,7 +1456,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1479,7 +1477,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1500,7 +1498,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1521,7 +1519,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1542,7 +1540,7 @@
                             </p>
                             <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
                                 ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
+                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-4 h-4 mr-2">
                             </a>
                         </div>
                     </article>
@@ -1552,7 +1550,7 @@
                 <div class="mt-10 text-center">
                     <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-primary font-semibold transition-colors text-lg">
                         مشاهده همه مقالات
-                        <i class="fas fa-arrow-left text-sm"></i>
+                        <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3.5 h-3.5">
                     </a>
                 </div>
             </div>
@@ -1598,7 +1596,7 @@
                     <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-lg font-semibold text-primary">چگونه می‌توانم از خدمات شما استفاده کنم؟</span>
-                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-5 h-5 transition-transform">
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
                             برای استفاده از خدمات ما، با ما تماس بگیرید یا از طریق فرم تماس با ما درخواست خود را ثبت کنید تا سریعا کارشناسان ما با شما تماس بگیرند.
@@ -1609,7 +1607,7 @@
                     <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-lg font-semibold text-primary">آیا خدمات شما شامل مشاوره رایگان می‌شود؟</span>
-                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-5 h-5 transition-transform">
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
                             بله، ما مشاوره رایگان اولیه برای تمام مشتریان ارائه می‌دهیم تا بتوانند بهترین راهکار را برای کسب‌وکار خود انتخاب کنند.
@@ -1620,7 +1618,7 @@
                     <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-lg font-semibold text-primary">چقدر طول می‌کشد تا درخواست من پردازش شود؟</span>
-                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-5 h-5 transition-transform">
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
                             زمان پردازش درخواست‌ها بسته به نوع خدمت متفاوت است، اما معمولاً تا 24 ساعت کاری طول می‌کشد.
@@ -1631,7 +1629,7 @@
                     <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-lg font-semibold text-primary">آیا پشتیبانی 24 ساعته دارید؟</span>
-                            <i class="fas fa-chevron-down text-accent transition-transform"></i>
+                            <img src="assets/icons/solid/chevron-down-solid-full.svg" alt="" class="w-5 h-5 transition-transform">
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
                             بله، تیم پشتیبانی ما در تمام ساعات شبانه‌روز آماده پاسخگویی به سوالات و حل مشکلات شما است.
@@ -1724,11 +1722,11 @@
                         <!-- Contact info row (moved under submit) -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                             <a href="mailto:info@irancts.com" class="flex items-center justify-center gap-3 px-4 py-3 text-primary transition-colors hover:text-primary-dark">
-                                <i class="fas fa-envelope text-lg"></i>
+                                <img src="assets/icons/solid/envelope-solid-full.svg" alt="" class="w-5 h-5">
                                 <span class="font-medium">info@irancts.com</span>
                             </a>
                             <a href="tel:+989371417732" class="flex items-center justify-center gap-3 px-4 py-3 text-primary transition-colors hover:text-primary-dark">
-                                <i class="fas fa-phone-alt text-lg"></i>
+                                <img src="assets/icons/solid/phone-flip-solid-full.svg" alt="" class="w-5 h-5">
                                 <span class="font-semibold">09371417732</span>
                             </a>
                         </div>
@@ -1756,7 +1754,7 @@
                         پلتفرم پیشرفته و هوشمند برای تسهیل فرآیندهای تجاری بین‌المللی و ارائه خدمات جامع بازرگانی
                     </p>
                     <div class="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
-                        <i class="fas fa-envelope text-accent text-sm sm:text-base"></i>
+                        <img src="assets/icons/solid/envelope-solid-full.svg" alt="" class="w-3.5 h-3.5 sm:w-4 sm:h-4" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                         <a href="mailto:info@irancts.com" class="text-blue-100 hover:text-white transition-colors font-medium text-sm sm:text-base">info@irancts.com</a>
                     </div>
                 </div>
@@ -1767,7 +1765,7 @@
                     <div class="space-y-3 sm:space-y-4">
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-shield-alt text-accent text-lg sm:text-xl"></i>
+                                <img src="assets/icons/solid/shield-halved-solid-full.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             </div>
                             <div>
                                 <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">امنیت بالا</h5>
@@ -1778,7 +1776,7 @@
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-clock text-accent text-lg sm:text-xl"></i>
+                                <img src="assets/icons/solid/clock-solid-full.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             </div>
                             <div>
                                 <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">پشتیبانی 24/7</h5>
@@ -1789,7 +1787,7 @@
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-award text-accent text-lg sm:text-xl"></i>
+                                <img src="assets/icons/solid/award-solid-full.svg" alt="" class="w-5 h-5 sm:w-6 sm:h-6" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             </div>
                             <div>
                                 <h5 class="font-semibold text-white mb-1 text-sm sm:text-base">کیفیت تضمین شده</h5>
@@ -1806,27 +1804,27 @@
                     <h4 class="text-xl sm:text-2xl font-bold text-white">دسترسی سریع</h4>
                     <div class="grid grid-cols-2 gap-3 sm:gap-4">
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             درباره ما
                         </a>
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             خدمات
                         </a>
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             تماس با ما
                         </a>
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             Hub تجاری
                         </a>
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             بلاگ
                         </a>
                         <a href="#" class="text-blue-100 hover:text-accent transition-colors text-sm sm:text-base flex items-center gap-2">
-                            <i class="fas fa-angle-left text-accent text-xs"></i>
+                            <img src="assets/icons/solid/angle-left-solid-full.svg" alt="" class="w-3 h-3" style="filter: invert(73%) sepia(54%) saturate(405%) hue-rotate(330deg) brightness(94%) contrast(92%);">
                             سوالات متداول
                         </a>
                     </div>
@@ -1834,16 +1832,16 @@
                         <p class="text-blue-100 text-xs sm:text-sm mb-3">ما را در شبکه‌های اجتماعی دنبال کنید:</p>
                         <div class="flex gap-3">
                             <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
-                                <i class="fab fa-instagram text-white"></i>
+                                <img src="assets/icons/brands/instagram-brands-solid-full.svg" alt="Instagram" class="w-5 h-5 invert">
                             </a>
                             <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
-                                <i class="fab fa-telegram text-white"></i>
+                                <img src="assets/icons/brands/telegram-brands-solid-full.svg" alt="Telegram" class="w-5 h-5 invert">
                             </a>
                             <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
-                                <i class="fab fa-whatsapp text-white"></i>
+                                <img src="assets/icons/brands/whatsapp-brands-solid-full.svg" alt="WhatsApp" class="w-5 h-5 invert">
                             </a>
                             <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-accent transition-colors flex items-center justify-center">
-                                <i class="fab fa-linkedin text-white"></i>
+                                <img src="assets/icons/brands/linkedin-brands-solid-full.svg" alt="LinkedIn" class="w-5 h-5 invert">
                             </a>
                         </div>
                     </div>
@@ -1971,11 +1969,13 @@
                 mobileNav.classList.toggle('hidden');
                 
                 // Change icon
-                const icon = mobileMenuBtn.querySelector('i');
+                const icon = mobileMenuBtn.querySelector('img');
                 if (mobileNav.classList.contains('hidden')) {
-                    icon.className = 'fas fa-bars text-lg';
+                    icon.src = 'assets/icons/solid/bars-solid-full.svg';
+                    icon.alt = 'Menu';
                 } else {
-                    icon.className = 'fas fa-times text-lg';
+                    icon.src = 'assets/icons/solid/xmark-solid-full.svg';
+                    icon.alt = 'Close';
                 }
             });
 
@@ -1984,7 +1984,7 @@
             submenuParents.forEach(parent => {
                 const btn = parent.querySelector('button');
                 const sub = parent.querySelector('.submenu');
-                const chevron = parent.querySelector('i.fas.fa-chevron-down');
+                const chevron = parent.querySelector('img[src*="chevron-down"]');
                 if (btn && sub) {
                     btn.addEventListener('click', () => {
                         const isOpen = sub.classList.contains('open');
@@ -1995,7 +1995,7 @@
                                 submenuEl.classList.remove('open');
                                 submenuEl.classList.add('hidden');
                             }
-                            const ch = p.querySelector('i.fas.fa-chevron-down');
+                            const ch = p.querySelector('img[src*="chevron-down"]');
                             if (ch) ch.style.transform = '';
                         });
                         if (!isOpen) {
@@ -2075,7 +2075,7 @@
         
         // Back to top button
         const backToTopBtn = document.createElement('button');
-        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        backToTopBtn.innerHTML = '<img src="assets/icons/solid/arrow-up-solid-full.svg" alt="Back to top" class="w-5 h-5 invert">';
         backToTopBtn.className = 'fixed bottom-8 left-8 text-white p-4 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50';
         backToTopBtn.style.backgroundColor = '#1e3a8a';
         backToTopBtn.id = 'back-to-top';
@@ -2126,8 +2126,9 @@
             // ESC key closes mobile menu
             if (e.key === 'Escape' && mobileNav && !mobileNav.classList.contains('hidden')) {
                 mobileNav.classList.add('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.className = 'fas fa-bars text-xl';
+                const icon = mobileMenuBtn.querySelector('img');
+                icon.src = 'assets/icons/solid/bars-solid-full.svg';
+                icon.alt = 'Menu';
             }
         });
         
