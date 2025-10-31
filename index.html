@@ -1068,7 +1068,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">موتور جستجوی تعرفه گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1086,7 +1086,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/message-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/message-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">اتاق چت اختصاصی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1104,7 +1104,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">Hub تجاری</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1122,7 +1122,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/barcode-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/barcode-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">جستجوی شناسه کالا</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1140,7 +1140,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/file-invoice-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/file-invoice-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">پرفورماساز انگلیسی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1158,7 +1158,7 @@
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-2xl"></div>
                         <div class="relative z-10">
                             <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/calculator-solid-full.svg" alt="" class="w-[28px] h-[28px] invert">
+                                <img src="assets/icons/solid/calculator-solid-full.svg" alt="" class="w-[48px] h-[48px] invert p-4">
                             </div>
                             <h3 class="text-2xl font-bold text-primary mb-4">ماشین حساب گمرکی</h3>
                             <p class="text-text-secondary leading-relaxed mb-6">
@@ -1900,6 +1900,43 @@
             if (widgetContainer) {
                 widgetObserver.observe(widgetContainer.closest('section'));
             }
+        });
+
+        // ========================================
+        // 2. Progressive Pattern Loading
+        // ========================================
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const patterns = document.querySelectorAll('.absolute.inset-0.opacity-3');
+            
+            // ابتدا همه pattern ها را مخفی کن
+            patterns.forEach(pattern => {
+                pattern.style.opacity = '0';
+                pattern.style.transition = 'opacity 0.8s ease-in-out';
+            });
+            
+            // بعد از 300ms (وقتی سایت لود شد)، pattern ها را نمایش بده
+            setTimeout(() => {
+                const patternObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // وقتی کاربر به این بخش رسید، pattern را نمایش بده
+                            setTimeout(() => {
+                                entry.target.style.opacity = '0.9';
+                            }, 100); // یک تاخیر کوچک برای انیمیشن نرم‌تر
+                            patternObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: '150px', // 150px قبل از دیده شدن
+                    threshold: 0.1
+                });
+                
+                // شروع observe کردن pattern ها
+                patterns.forEach(pattern => {
+                    patternObserver.observe(pattern);
+                });
+            }, 300); // 300ms تاخیر برای لود اولیه سایت
         });
 
         // Hero Slider
