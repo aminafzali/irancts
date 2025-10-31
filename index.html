@@ -108,6 +108,30 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        /* Mobile nav active underline */
+        .nav-link.mobile-active::after {
+            width: 100%;
+        }
+
+        /* Mobile submenu background */
+        #mobile-nav .submenu {
+            background-color: rgba(30, 58, 138, 0.04);
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            padding-right: 0.75rem;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-4px);
+            transition: max-height 300ms ease, opacity 200ms ease, transform 200ms ease;
+        }
+
+        #mobile-nav .submenu.open {
+            max-height: 500px;
+            opacity: 1;
+            transform: translateY(0);
+        }
         
         .hero-title {
             background: linear-gradient(135deg, white, #e0e7ff);
@@ -850,7 +874,7 @@
 
             <!-- Navigation Menu -->
             <nav class="hidden lg:block border-t border-gray-100 py-3">
-                <ul class="flex items-center justify-start space-x-8 space-x-reverse">
+                <ul class="flex items-center justify-start space-x-2 space-x-reverse">
                     <li><a href="#" class="nav-link text-text-primary font-medium text-base">خانه</a></li>
                     <li class="relative group">
                         <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
@@ -880,6 +904,49 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="lg:hidden hidden border-t border-gray-100 pb-3">
+                <ul class="flex flex-col text-right pt-3 px-1">
+                    <li>
+                        <a href="#" class="nav-link block px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">خانه</a>
+                    </li>
+                    <li class="has-submenu">
+                        <button type="button" class="w-full flex items-center justify-between px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">
+                            <span>Hub</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <ul class="submenu hidden pr-4 space-y-2 text-sm text-text-secondary">
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">لیست درخواست ها</a></li>
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">ثبت درخواست</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link block px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">جستجوگر تعرفه گمرکی</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link block px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">جستجوگر شناسه کالا</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link block px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">اتاق چت اختصاصی</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link block px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">ماشین حساب گمرکی</a>
+                    </li>
+                    <li class="has-submenu">
+                        <button type="button" class="w-full flex items-center justify-between px-1 py-2 text-text-primary font-medium text-base hover:text-accent transition-colors">
+                            <span>خدمات رایگان دیگر</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform"></i>
+                        </button>
+                        <ul class="submenu hidden pr-4 space-y-2 text-sm text-text-secondary">
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">پرفورماساز انگلیسی</a></li>
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">پکینگ لیست ساز</a></li>
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">invoice ساز انگلیسی</a></li>
+                            <li><a href="#" class="block py-2 hover:text-accent transition-colors">فاکتور ساز فارسی</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -894,17 +961,14 @@
                     <div class="absolute inset-0 flex items-center justify-start px-8 sm:px-16">
                         <div class="text-right max-w-xl p-8 rounded-2xl" style="background: rgba(0, 0, 0, 0.219); backdrop-filter: blur(2px);">
                             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                                پلتفرم هوشمند تجارت بین‌المللی
+                                پلتفرم هوشمند
                             </h1>
                             <p class="text-base sm:text-lg md:text-xl text-white/95 mb-6 leading-relaxed">
-                                مدیریت کامل واردات و صادرات با ابزارهای پیشرفته و خدمات تخصصی
+                                پلتفرم جامع و هوشمند تجارت بین‌المللی برای مدیریت کامل واردات و صادرات با ابزارهای پیشرفته و خدمات تخصصی
                             </p>
                             <div class="flex gap-3">
                                 <button class="text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg" style="background-color: #1e3a8a;">
                                     شروع کنید
-                                </button>
-                                <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">
-                                    درباره ما
                                 </button>
                             </div>
                         </div>
@@ -917,17 +981,14 @@
                     <div class="absolute inset-0 flex items-center justify-start px-8 sm:px-16">
                         <div class="text-right max-w-xl p-8 rounded-2xl" style="background: rgba(0, 0, 0, 0.219); backdrop-filter: blur(2px);">
                             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                                خدمات گمرکی حرفه‌ای
+                                خدمات ویژه
                             </h1>
                             <p class="text-base sm:text-lg md:text-xl text-white/95 mb-6 leading-relaxed">
-                                ترخیص کالا، محاسبه تعرفه و مشاوره تخصصی با تیم متخصص ما
+                                مشاوره و اجرای کامل خدمات بازرگانی از مبدا تا مقصد
                             </p>
                             <div class="flex gap-3">
                                 <button class="text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg" style="background-color: #1e3a8a;">
                                     مشاوره رایگان
-                                </button>
-                                <button class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white/10 transition-all">
-                                    خدمات ما
                                 </button>
                             </div>
                         </div>
@@ -940,13 +1001,23 @@
                     <button class="slider-dot w-12 h-2 rounded-full transition-all" style="background-color: rgba(255, 255, 255, 0.4);" data-slide="1"></button>
                 </div>
                 
-                <!-- Slider Arrow Controls -->
-                <div class="absolute bottom-8 right-8 flex gap-3 z-20">
+                <!-- Slider Arrow Controls - Desktop -->
+                <div class="absolute bottom-8 right-8 hidden md:flex gap-3 z-20">
                     <button id="slider-prev" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
                         <i class="fas fa-chevron-right text-white text-lg"></i>
                     </button>
                     <button id="slider-next" class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:bg-black/70" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
                         <i class="fas fa-chevron-left text-white text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Slider Arrow Controls - Mobile (sides) -->
+                <div class="absolute inset-0 flex items-center justify-between px-3 md:hidden z-20">
+                    <button id="slider-prev-m" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);">
+                        <i class="fas fa-chevron-right text-white"></i>
+                    </button>
+                    <button id="slider-next-m" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/70 transition-colors" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);">
+                        <i class="fas fa-chevron-left text-white"></i>
                     </button>
                 </div>
             </div>
@@ -1100,170 +1171,6 @@
         </section>
 
 
-        <!-- Articles Section -->
-        <section class="py-16 relative overflow-hidden" style="background-color: #f9fafb;">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-3">
-                <div class="absolute inset-0" style="background-image: 
-                    repeating-linear-gradient(
-                        0deg,
-                        transparent,
-                        transparent 39px,
-                        rgba(30, 58, 138, 0.08) 40px,
-                        rgba(30, 58, 138, 0.08) 40px
-                    ),
-                    repeating-linear-gradient(
-                        90deg,
-                        transparent,
-                        transparent 39px,
-                        rgba(244, 162, 97, 0.08) 40px,
-                        rgba(244, 162, 97, 0.08) 40px
-                    ),
-                    repeating-linear-gradient(
-                        45deg,
-                        transparent,
-                        transparent 0px,
-                        rgba(107, 114, 128, 0.05) 1px,
-                        rgba(107, 114, 128, 0.05) 2px
-                    );"></div>
-            </div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">آخرین مقالات</h2>
-                    <p class="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4">
-                        مقالات تخصصی و کاربردی در حوزه تجارت بین‌المللی و خدمات گمرکی
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Article 1 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="g3.jpg" alt="سامانه ارز نیما" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
-                                تجارت
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">سامانه ارز نیما چیست؟</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                در دنیای سرمایه‌گذاری و بازارهای مالی، اصطلاحاتی وجود دارد که درک صحیح و شناخت کافی از آن می‌تواند برای کسانی که قصد ورود به این نوع بازارها را دارند، موثر و کاربردی باشد...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Article 2 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="شناسه کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
-                                گمرک
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">شناسه کالا چیست؟</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                به دلیل افزایش سرقت و قاچاق کالا در حال حاضر هرگونه فعالیت تجاری در زمینه صادرات و واردات کالا صرفاً در صورت داشتن شناسه کالا قابل اجرا است...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Article 3 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="g3.jpg" alt="کارنه تیر" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
-                                ترانزیت
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">کارنه تیر</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                کارنه تیر سندی گمرکی است که برای ترانزیت بین‌المللی کالا در کشور مبدا صادر می‌شود و باعث می‌شود کالا به صورت پلمپ شده از خاک کشورهای بین راه عبور کند...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Article 4 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="اینکوترمز" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
-                                اصطلاحات
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">اینکوترمز چیست؟</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                اینکوترمز یا اصطلاحات تجاری بین‌المللی شامل مجموعه‌ای از پیش تعریف شده‌ای از اصطلاحات تجاری است که توسط اتاق بازرگانی بین‌المللی منتشر می‌شود...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Article 5 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="g3.jpg" alt="دموراژ" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
-                                کشتیرانی
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">دموراژ چیست؟</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                از گذشته تا کنون، صنعت کشتیرانی یکی از حیاتی‌ترین مسیرهای ارتباطی برای تجار و بازرگانان محسوب می‌شود و نقش مهم و تأثیرات بسزایی در اقتصاد جهانی دارد...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Article 6 -->
-                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="Gemini_Generated_Image_12044l12044l1204.png" alt="واردات کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
-                                واردات
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-primary mb-3">واردات کالا چیست؟</h3>
-                            <p class="text-text-secondary leading-relaxed mb-4">
-                                واردات کالا به عنوان یک فعالیت بازرگانی شناخته می‌شود که شامل ثبت سفارش، خرید کالا از کشور خارجی و حمل آن تا مرز کشور و در نهایت وارد کردن به داخل خاک کشور است...
-                            </p>
-                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
-                                ادامه مطلب
-                                <i class="fas fa-arrow-left mr-2"></i>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- Exchange Rates Section -->
         <section class="py-16 sm:py-20 relative overflow-hidden" style="background-color: #ffffff;">
             <!-- Background Pattern -->
@@ -1359,16 +1266,16 @@
             </div>
             <div class="max-w-6xl mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">خدمات تجاری و بازرگانی</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">خدمات ویژه تجاری و بازرگانی</h2>
                     <p class="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
                         راهکارهای جامع و حرفه‌ای برای توسعه کسب‌وکار بین‌المللی شما با بهره‌گیری از تجربه و تخصص تیم ما
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 service-grid">
                     <!-- SVG Animation 1 - Trade Network -->
-                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
-                        <div class="svg-animation mb-4">
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-4 transition-all duration-300">
+                        <div class="svg-animation mb-2">
                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <!-- خطوط خاکستری که محو می‌شوند -->
                                 <path class="gray-path" d="M30,100 L170,100 M100,30 L100,170 M50,50 L150,150 M150,50 L50,150" 
@@ -1389,13 +1296,13 @@
                         </div>
                         <h3 class="text-2xl font-bold text-primary mb-2">شبکه تجاری</h3>
                         <p class="text-base text-text-secondary leading-relaxed">
-                            اتصال هوشمند و سریع بازرگانان و شرکت‌های تجاری در سراسر دنیا
+                            اتصال هوشمند و سریع بازرگانان و شرکت‌های تجاری به شرکت های خدمات بازرگانی
                         </p>
                     </div>
 
                     <!-- SVG Animation 2 - Shipping Container -->
-                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
-                        <div class="svg-animation mb-4">
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-4 transition-all duration-300">
+                        <div class="svg-animation mb-2">
                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <!-- خطوط خاکستری که محو می‌شوند -->
                                 <path class="gray-path" d="M40,60 L40,140 L160,140 L160,60 L40,60 M80,60 L80,140 M120,60 L120,140" 
@@ -1418,15 +1325,15 @@
                                 <circle class="colored-circle" cx="130" cy="100" r="10" fill="#f4a261"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-2">حمل و نقل بین‌المللی</h3>
+                        <h3 class="text-2xl font-bold text-primary mb-2">مشاوره و اجرا</h3>
                         <p class="text-base text-text-secondary leading-relaxed">
-                            مدیریت کامل و هوشمند فرآیند حمل کالا با کانتینرهای استاندارد
+                            مشاوره و اجرای کامل خدمات بازرگانی از مبدا تا مقصد
                         </p>
                     </div>
 
                     <!-- SVG Animation 3 - Currency Exchange -->
-                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-6 transition-all duration-300">
-                        <div class="svg-animation mb-4">
+                    <div class="svg-item bg-white border border-gray-200 rounded-2xl p-4 transition-all duration-300">
+                        <div class="svg-animation mb-2">
                             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <!-- خطوط خاکستری که محو می‌شوند -->
                                 <path class="gray-path" d="M60,80 L140,80 M140,80 L130,70 M140,80 L130,90 M140,120 L60,120 M60,120 L70,110 M60,120 L70,130" 
@@ -1447,11 +1354,206 @@
                                 <circle class="colored-circle" cx="100" cy="100" r="20" fill="#f4a261"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-2">تبادل ارز لحظه‌ای</h3>
+                        <h3 class="text-2xl font-bold text-primary mb-2">تحقیقات بازاریابی</h3>
                         <p class="text-base text-text-secondary leading-relaxed">
-                            دسترسی به نرخ‌های به‌روز ارزهای مختلف برای تصمیم‌گیری بهتر
+                            شناسایی، تعیین و اولویت بندی بازارهای هدف در صادرات و واردات
                         </p>
                     </div>
+
+                    <!-- Call To Action - Wide Card -->
+                    <div class="md:col-span-3 rounded-2xl p-6 md:p-8 mt-8 md:mt-12" style="background-color:#1e3a8a;">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                            <!-- Left now: Company Logo (bigger) -->
+                            <div class="order-1 md:order-1 flex items-center justify-center">
+                                <img src="iranyekan/logo2.png" alt="IRAN CTS" class="w-32 h-32 object-contain"/>
+                            </div>
+
+                            <!-- Right now: Title, text and button -->
+                            <div class="md:col-span-2 order-2 md:order-3 text-right">
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">راهکارهای ویژه ما</h3>
+                                <p class="text-white/90 leading-relaxed mb-6">
+                                    ارائه بسته‌های جامع برای توسعه سریع تجارت بین‌المللی: تحلیل و انتخاب بازارهای هدف، برنامه‌ریزی مسیرهای تأمین و حمل، مدیریت امور گمرکی و اسنادی، و شبکه‌سازی تجاری برای تسهیل و سرعت‌بخشیدن فرایندهای تجاری و بازرگانی.
+                                </p>
+                                <a href="#contact" class="inline-flex items-center font-semibold px-6 py-3 rounded-lg transition-colors" style="background-color:#f4a261; color:#ffffff;">
+                                    همین الان تماس بگیرید
+                                    <i class="fas fa-arrow-left mr-2"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="py-16 relative overflow-hidden" style="background-color: #f9fafb;">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-3">
+                <div class="absolute inset-0" style="background-image: 
+                    repeating-linear-gradient(
+                        0deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(30, 58, 138, 0.08) 40px,
+                        rgba(30, 58, 138, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent,
+                        transparent 39px,
+                        rgba(244, 162, 97, 0.08) 40px,
+                        rgba(244, 162, 97, 0.08) 40px
+                    ),
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 0px,
+                        rgba(107, 114, 128, 0.05) 1px,
+                        rgba(107, 114, 128, 0.05) 2px
+                    );"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6">آخرین مقالات</h2>
+                    <p class="text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed px-4">
+                        مقالات تخصصی و کاربردی در حوزه تجارت بین‌المللی و خدمات گمرکی
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="سامانه ارز نیما" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                تجارت
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">سامانه ارز نیما چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                در دنیای سرمایه‌گذاری و بازارهای مالی، اصطلاحاتی وجود دارد که درک صحیح و شناخت کافی از آن می‌تواند برای کسانی که قصد ورود به این نوع بازارها را دارند، موثر و کاربردی باشد...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g4.png" alt="شناسه کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                گمرک
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">شناسه کالا چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                به دلیل افزایش سرقت و قاچاق کالا در حال حاضر هرگونه فعالیت تجاری در زمینه صادرات و واردات کالا صرفاً در صورت داشتن شناسه کالا قابل اجرا است...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="کارنه تیر" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                ترانزیت
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">کارنه تیر</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                کارنه تیر سندی گمرکی است که برای ترانزیت بین‌المللی کالا در کشور مبدا صادر می‌شود و باعث می‌شود کالا به صورت پلمپ شده از خاک کشورهای بین راه عبور کند...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g4.png" alt="اینکوترمز" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                اصطلاحات
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">اینکوترمز چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                اینکوترمز یا اصطلاحات تجاری بین‌المللی شامل مجموعه‌ای از پیش تعریف شده‌ای از اصطلاحات تجاری است که توسط اتاق بازرگانی بین‌المللی منتشر می‌شود...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g3.jpg" alt="دموراژ" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                                کشتیرانی
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">دموراژ چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                از گذشته تا کنون، صنعت کشتیرانی یکی از حیاتی‌ترین مسیرهای ارتباطی برای تجار و بازرگانان محسوب می‌شود و نقش مهم و تأثیرات بسزایی در اقتصاد جهانی دارد...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="g4.png" alt="واردات کالا" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4 text-white px-3 py-1 rounded-full text-sm font-medium" style="background-color: #1e3a8a;">
+                                واردات
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-3">واردات کالا چیست؟</h3>
+                            <p class="text-text-secondary leading-relaxed mb-4">
+                                واردات کالا به عنوان یک فعالیت بازرگانی شناخته می‌شود که شامل ثبت سفارش، خرید کالا از کشور خارجی و حمل آن تا مرز کشور و در نهایت وارد کردن به داخل خاک کشور است...
+                            </p>
+                            <a href="#" class="text-accent font-medium hover:text-primary transition-colors flex items-center">
+                                ادامه مطلب
+                                <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- All Articles Button -->
+                <div class="mt-10 text-center">
+                    <a href="#" class="inline-flex items-center gap-2 text-accent hover:text-primary font-semibold transition-colors text-lg">
+                        مشاهده همه مقالات
+                        <i class="fas fa-arrow-left text-sm"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1495,11 +1597,11 @@
                     <!-- FAQ Item 1 -->
                     <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                         <button class="w-full px-6 py-4 text-right flex items-center justify-between hover:bg-gray-50 transition-colors">
-                            <span class="text-lg font-semibold text-primary">چگونه می‌توانم از خدمات گمرکی شما استفاده کنم؟</span>
+                            <span class="text-lg font-semibold text-primary">چگونه می‌توانم از خدمات شما استفاده کنم؟</span>
                             <i class="fas fa-chevron-down text-accent transition-transform"></i>
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
-                            برای استفاده از خدمات گمرکی ما، ابتدا در سایت ثبت‌نام کنید، سپس از طریق پنل کاربری خود می‌توانید درخواست خدمات مورد نظر خود را ثبت کنید.
+                            برای استفاده از خدمات ما، با ما تماس بگیرید یا از طریق فرم تماس با ما درخواست خود را ثبت کنید تا سریعا کارشناسان ما با شما تماس بگیرند.
                         </div>
                     </div>
 
@@ -1521,7 +1623,7 @@
                             <i class="fas fa-chevron-down text-accent transition-transform"></i>
                         </button>
                         <div class="faq-content px-6 pb-4 text-text-secondary leading-relaxed" style="display: none;">
-                            زمان پردازش درخواست‌ها بسته به نوع خدمت متفاوت است، اما معمولاً بین 24 تا 48 ساعت کاری طول می‌کشد.
+                            زمان پردازش درخواست‌ها بسته به نوع خدمت متفاوت است، اما معمولاً تا 24 ساعت کاری طول می‌کشد.
                         </div>
                     </div>
 
@@ -1540,7 +1642,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="py-16 relative overflow-hidden" style="background-color: #ffffff;">
+        <section id="contact" class="py-16 relative overflow-hidden" style="background-color: #ffffff;">
             <!-- Background Pattern -->
             <div class="absolute inset-0 opacity-3">
                 <div class="absolute inset-0" style="background-image: 
@@ -1574,7 +1676,7 @@
                     </p>
                 </div>
                 
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+                <div class="bg-white rounded-2xl border border-gray-200 p-8">
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Name Field -->
@@ -1617,6 +1719,18 @@
                                 ارسال پیام
                                 <span class="mr-3 font-bold" style="font-size: 24px;">←</span>
                             </button>
+                        </div>
+
+                        <!-- Contact info row (moved under submit) -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <a href="mailto:info@irancts.com" class="flex items-center justify-center gap-3 px-4 py-3 text-primary transition-colors hover:text-primary-dark">
+                                <i class="fas fa-envelope text-lg"></i>
+                                <span class="font-medium">info@irancts.com</span>
+                            </a>
+                            <a href="tel:+989371417732" class="flex items-center justify-center gap-3 px-4 py-3 text-primary transition-colors hover:text-primary-dark">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                                <span class="font-semibold">09371417732</span>
+                            </a>
                         </div>
                     </form>
                 </div>
@@ -1788,6 +1902,8 @@
         // Arrow navigation
         const prevBtn = document.getElementById('slider-prev');
         const nextBtn = document.getElementById('slider-next');
+        const prevBtnM = document.getElementById('slider-prev-m');
+        const nextBtnM = document.getElementById('slider-next-m');
         
         if (prevBtn) {
             prevBtn.addEventListener('click', function() {
@@ -1800,6 +1916,23 @@
         
         if (nextBtn) {
             nextBtn.addEventListener('click', function() {
+                nextSlide();
+                stopSlider();
+                startSlider();
+            });
+        }
+
+        if (prevBtnM) {
+            prevBtnM.addEventListener('click', function() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+                stopSlider();
+                startSlider();
+            });
+        }
+        
+        if (nextBtnM) {
+            nextBtnM.addEventListener('click', function() {
                 nextSlide();
                 stopSlider();
                 startSlider();
@@ -1840,10 +1973,55 @@
                 // Change icon
                 const icon = mobileMenuBtn.querySelector('i');
                 if (mobileNav.classList.contains('hidden')) {
-                    icon.className = 'fas fa-bars text-xl';
+                    icon.className = 'fas fa-bars text-lg';
                 } else {
-                    icon.className = 'fas fa-times text-xl';
+                    icon.className = 'fas fa-times text-lg';
                 }
+            });
+
+            // Submenu toggles (mobile)
+            const submenuParents = mobileNav.querySelectorAll('.has-submenu');
+            submenuParents.forEach(parent => {
+                const btn = parent.querySelector('button');
+                const sub = parent.querySelector('.submenu');
+                const chevron = parent.querySelector('i.fas.fa-chevron-down');
+                if (btn && sub) {
+                    btn.addEventListener('click', () => {
+                        const isOpen = sub.classList.contains('open');
+                        // close all others
+                        submenuParents.forEach(p => {
+                            const submenuEl = p.querySelector('.submenu');
+                            if (submenuEl) {
+                                submenuEl.classList.remove('open');
+                                submenuEl.classList.add('hidden');
+                            }
+                            const ch = p.querySelector('i.fas.fa-chevron-down');
+                            if (ch) ch.style.transform = '';
+                        });
+                        if (!isOpen) {
+                            sub.classList.remove('hidden');
+                            sub.classList.add('open');
+                            if (chevron) chevron.style.transform = 'rotate(180deg)';
+                        } else {
+                            sub.classList.remove('open');
+                            sub.classList.add('hidden');
+                            if (chevron) chevron.style.transform = '';
+                        }
+                    });
+                }
+            });
+
+            // Active underline on mobile links
+            const mobileLinks = mobileNav.querySelectorAll('a[href]');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // remove active from all
+                    mobileNav.querySelectorAll('.nav-link').forEach(el => el.classList.remove('mobile-active'));
+                    // add to clicked
+                    if (link.classList.contains('nav-link')) {
+                        link.classList.add('mobile-active');
+                    }
+                });
             });
         }
         
