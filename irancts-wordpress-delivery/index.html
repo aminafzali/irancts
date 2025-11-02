@@ -331,6 +331,70 @@
             touch-action: none;
         }
         
+        /* Mobile Services Layout */
+        @media (max-width: 768px) {
+            /* Remove background for service icons (except Hub) */
+            .container-card .w-24 {
+                display: flex !important;
+                width: 32px !important;
+                height: 32px !important;
+                margin-bottom: 0.75rem !important;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            .container-card .w-24 img {
+                filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%) !important;
+            }
+            .container-card .relative.z-10 {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .container-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .container-card p {
+                font-size: 0.875rem;
+                margin-bottom: 0.75rem !important;
+                line-clamp: 2;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .container-card {
+                padding: 1rem !important;
+            }
+        }
+        
+        /* Hub card mobile layout */
+        .hub-card-mobile {
+            min-height: 250px;
+        }
+        @media (max-width: 768px) {
+            .hub-card-mobile .relative.z-10.flex.items-center {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1rem !important;
+            }
+            .hub-card-mobile .w-24 {
+                display: flex !important;
+                width: 50px !important;
+                height: 50px !important;
+                border-radius: 50% !important;
+            }
+            .hub-card-mobile .w-24 img {
+                filter: invert(1) !important;
+            }
+            .hub-card-mobile .flex.items-center.text-white span {
+                display: none !important;
+            }
+            .hub-card-mobile .flex.items-center.text-white img {
+                margin-left: 0 !important;
+            }
+        }
+        
         /* Submenu Animations */
         .submenu {
             max-height: 0;
@@ -551,6 +615,13 @@
             content-visibility: auto;
             contain: layout style paint;
             will-change: transform;
+        }
+        
+        /* Increase pattern visibility on mobile */
+        @media (max-width: 768px) {
+            .absolute.inset-0.opacity-3 {
+                opacity: 0.75 !important;
+            }
         }
         
         /* Footer Responsive */
@@ -997,20 +1068,31 @@
                     <a href="tel:09371417732" class="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors">
                         <img src="assets/icons/solid/phone-flip-solid-full.svg" alt="" class="w-4 h-4" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
                     </a>
-                    
-                    <!-- Mobile Menu Button -->
+
+                <!-- Mobile Menu Button -->
                     <button class="text-primary hover:text-accent transition-colors p-2" id="mobile-menu-btn">
                         <img src="assets/icons/solid/bars-solid-full.svg" alt="Menu" class="w-6 h-6" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                </button>
+                </div>
+            </div>
+
+            <!-- Desktop Search Bar -->
+            <div id="desktop-search-bar" class="hidden border-t border-gray-100">
+                <div class="flex items-center gap-2 p-4">
+                    <input type="text" placeholder="جستجو..." class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-right">
+                    <button class="p-2 text-primary hover:text-accent transition-colors" id="desktop-search-close">
+                        <img src="assets/icons/solid/xmark-solid-full.svg" alt="Close" class="w-6 h-6" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
                     </button>
                 </div>
             </div>
 
             <!-- Navigation Menu -->
             <nav class="hidden lg:block border-t border-gray-100 py-3">
-                <ul class="flex items-center justify-start gap-6">
+                <div class="flex items-center justify-between">
+                    <ul class="flex items-center justify-start gap-6">
                     <li><a href="#" class="nav-link text-text-primary font-medium text-base">خانه</a></li>
-                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر تعرفه گمرکی</a></li>
-                    <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر شناسه کالا</a></li>
+                        <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر تعرفه گمرکی</a></li>
+                        <li><a href="#" class="nav-link text-text-primary font-medium text-base">جستجوگر شناسه کالا</a></li>
                     <li class="relative group">
                         <a href="#" class="nav-link text-text-primary font-medium text-base flex items-center">
                             Hub
@@ -1035,6 +1117,12 @@
                         </ul>
                     </li>
                 </ul>
+                
+                <!-- Desktop Search Button -->
+                <button class="lg:flex hidden items-center text-primary hover:text-accent transition-colors p-2" id="desktop-search-btn">
+                    <img src="assets/icons/solid/magnifying-glass-solid-full.svg" alt="Search" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                </button>
+                </div>
             </nav>
 
             <!-- Mobile Search Bar -->
@@ -1190,14 +1278,46 @@
                     );"></div>
             </div>
             <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">خدمات ما</h2>
                     <p class="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
                         مجموعه‌ای کامل از ابزارها و خدمات برای تسهیل تجارت بین‌المللی
                     </p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hub Commercial - Special Layout -->
+                <div class="mb-6">
+                    <div class="container-card rounded-2xl p-12 group relative overflow-hidden border-2 border-blue-700 hover:border-accent transition-all duration-500 hover:shadow-2xl hub-card-mobile" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);">
+                        <!-- Background Pattern Dots - Similar to akhbargomroki.com -->
+                        <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle, rgba(255, 255, 255, 0.25) 1px, transparent 1px); background-size: 12px 12px;"></div>
+                        
+                        <!-- World Map Background -->
+                        <div class="absolute inset-0 opacity-15">
+                            <div class="absolute left-0 top-0 w-2/3 lg:w-2/5 h-full overflow-hidden">
+                                <img src="assets/images/world_map_dots.webp" alt="" class="absolute left-0 top-0 w-full h-full object-cover" style="object-position: right;">
+                            </div>
+                        </div>
+                        
+                        <div class="relative z-10 flex items-center gap-6">
+                            <div class="w-24 h-24 rounded-2xl flex items-center justify-center flex-shrink-0" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
+                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-12 h-12 invert">
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold text-white mb-2">Hub تجاری</h3>
+                                <p class="text-blue-100 mb-4">
+                                    شبکه ارتباطی جامع برای جستجو، ارتباط و پیدا کردن خدمات تجاری
+                                </p>
+                                <a href="#" class="inline-flex items-center text-white font-semibold group-hover:text-accent transition-all px-3 py-1.5 rounded-lg" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);">
+                                    <span>ورود</span>
+                                    <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-6 h-6 mr-2 invert">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Services Grid -->
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
                     <!-- Service 1 - Container Style -->
                     <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
@@ -1209,10 +1329,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 دسترسی سریع و دقیق به کد تعرفه همه کالاها با موتور جستجوی پیشرفته و توضیحات کامل
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>شروع جستجو</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">جستجو</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
 
@@ -1227,29 +1347,11 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 دقیق‌ترین و سریع‌ترین جستجو با وارد کردن نام کالا یا بخشی از توضیحات
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>جستجوی کالا</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">جستجو</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 - Container Style -->
-                    <div class="container-card bg-white rounded-2xl p-8 group relative overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
-                        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent/20 to-transparent rounded-bl-2xl"></div>
-                        <div class="relative z-10">
-                            <div class="w-24 h-24 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg" style="background-color: #1e3a8a;">
-                                <img src="assets/icons/solid/network-wired-solid-full.svg" alt="" class="w-12 h-12 invert">
-                            </div>
-                            <h3 class="text-2xl font-bold text-primary mb-4">Hub تجاری</h3>
-                            <p class="text-text-secondary leading-relaxed mb-6">
-                                شبکه ارتباطی جامع برای جستجو، ارتباط و پیدا کردن خدمات تجاری مورد نیاز
-                            </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>ورود به Hub</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Service 4 - Container Style -->
@@ -1263,10 +1365,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 محاسبه دقیق و سریع هزینه‌های گمرکی با فیلدهای هوشمند و رابط کاربری ساده
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>محاسبه هزینه</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">محاسبه</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
 
@@ -1281,10 +1383,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 ایجاد آسان و سریع پرفورما انگلیسی با قالب‌های استاندارد بین‌المللی
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>ایجاد پرفورما</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">ایجاد</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
 
@@ -1299,10 +1401,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 ایجاد سریع و دقیق لیست بسته‌بندی برای محموله‌های تجاری با قالب استاندارد
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>ایجاد لیست بسته‌بندی</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">ایجاد</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
 
@@ -1317,10 +1419,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 ساخت سریع فاکتور انگلیسی با فرمت استاندارد بین‌المللی برای معاملات تجاری
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>ایجاد invoice</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">ایجاد</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
 
@@ -1335,10 +1437,10 @@
                             <p class="text-text-secondary leading-relaxed mb-6">
                                 ایجاد فاکتور فارسی کامل با قالب‌های حرفه‌ای و قابل چاپ برای معاملات داخلی
                             </p>
-                            <div class="flex items-center text-accent font-semibold group-hover:text-primary transition-colors">
-                                <span>ایجاد فاکتور</span>
-                                <img src="assets/icons/solid/arrow-left-solid-full.svg" alt="" class="w-3 h-3 mr-2 group-hover:translate-x-1 transition-transform" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
-                            </div>
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-text-secondary hover:text-accent transition-colors" style="background-color: #e8f0fe;">
+                                <span class="text-sm font-medium">ایجاد</span>
+                                <img src="assets/icons/solid/left-long-solid-full.svg" alt="" class="w-5 h-5" style="filter: invert(17%) sepia(91%) saturate(1748%) hue-rotate(208deg) brightness(93%) contrast(91%);">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -2278,7 +2380,7 @@
             // Set initial cursor
             sliderContainer.style.cursor = 'grab';
         }
-
+        
         // Initialize slider
         showSlide(0);
         startSlider();
@@ -2322,6 +2424,29 @@
             mobileSearchClose.addEventListener('click', function() {
                 mobileSearchBar.classList.add('hidden');
                 mobileNav.classList.remove('hidden');
+            });
+        }
+        
+        // Desktop search toggle
+        const desktopSearchBtn = document.getElementById('desktop-search-btn');
+        const desktopSearchBar = document.getElementById('desktop-search-bar');
+        const desktopSearchClose = document.getElementById('desktop-search-close');
+        const desktopNav = document.querySelector('nav.hidden.lg\\:block');
+        
+        if (desktopSearchBtn && desktopSearchBar && desktopSearchClose && desktopNav) {
+            desktopSearchBtn.addEventListener('click', function() {
+                desktopSearchBar.classList.remove('hidden');
+                desktopNav.classList.add('hidden');
+                // Focus on search input
+                const searchInput = desktopSearchBar.querySelector('input');
+                if (searchInput) {
+                    setTimeout(() => searchInput.focus(), 100);
+                }
+            });
+            
+            desktopSearchClose.addEventListener('click', function() {
+                desktopSearchBar.classList.add('hidden');
+                desktopNav.classList.remove('hidden');
             });
         }
         
@@ -2377,7 +2502,7 @@
                         // Close all other submenus
                         submenuParents.forEach(p => {
                             if (p !== parent) {
-                                const submenuEl = p.querySelector('.submenu');
+                            const submenuEl = p.querySelector('.submenu');
                                 const ch = p.querySelector('.submenu-chevron');
                                 if (submenuEl) submenuEl.classList.remove('open');
                                 if (ch) ch.classList.remove('rotate');
@@ -2507,8 +2632,8 @@
                 return;
             }
             
-            const loadingOverlay = document.createElement('div');
-            loadingOverlay.className = 'fixed inset-0 bg-white z-50 flex items-center justify-center';
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'fixed inset-0 bg-white z-50 flex items-center justify-center';
             loadingOverlay.style.transition = 'opacity 0.3s ease-out';
             loadingOverlay.innerHTML = `
                 <div class="text-center">
@@ -2517,8 +2642,8 @@
                 </div>
             `;
             
-            document.body.appendChild(loadingOverlay);
-            
+        document.body.appendChild(loadingOverlay);
+        
             let loadingRemoved = false;
             
             function removeLoading() {
